@@ -1,0 +1,16 @@
+{% extends 'posts/base.html' %}
+{% load static %}
+{% block content %}
+<div id="posts-box"></div>
+<div id="spinner-box"></div>
+<div id="loading-box">
+    <button class="btn btn-primary" id="load-btn">Load More</button>
+</div>
+{% for obj in qs %}
+
+<h1>{{ obj.title }}</h1>
+<p>{{ obj.body }}</p>
+
+{% endfor %}
+
+{% endblock %}
