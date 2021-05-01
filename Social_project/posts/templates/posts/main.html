@@ -2,15 +2,18 @@
 {% load static %}
 {% block content %}
 <div id="posts-box"></div>
-<div id="spinner-box"></div>
+<div id="spinner-Box" class="not-visible">
+    <div class="spinner-border" role="status">
+    </div>
+</div>
 <div id="loading-box">
     <button class="btn btn-primary" id="load-btn">Load More</button>
 </div>
-{% for obj in qs %}
+<!-- {% for obj in qs %}
 
 <h1>{{ obj.title }}</h1>
 <p>{{ obj.body }}</p>
 
-{% endfor %}
+{% endfor %} -->
 
 {% endblock %}

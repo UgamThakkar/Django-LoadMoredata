@@ -19,4 +19,6 @@ class PostJsonListView(View):
         upper = kwargs.get('num_posts')
         lower = upper-3
         posts = list(Post.objects.values()[lower:upper])
-        return JsonResponse({'data': posts}, safe=False)
+        posts_size = len(Post.objects.all())
+        size = True if upper>=posts_size else False
+        return JsonResponse({'data': posts, 'max': size}, safe=False)
